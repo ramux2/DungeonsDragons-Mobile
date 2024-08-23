@@ -1,12 +1,24 @@
 package org.example.Util
 
 class RollDice {
-    fun rolagemAtributos(): Int {
-        val rolling = List(4) { Dices.d6() }
-        val minValue = rolling.min()
+    companion object {
+        fun rollAtributes(): Int {
+            val rolling = MutableList(4) { Dices.d6() }
+            val minValue = rolling.min()
 
-        val maxSum = rolling.sorted().drop(1).sum()
+            // Remover a primeira ocorrência do menor valor
+            if (minValue != null) {
+                rolling.remove(minValue)
+            }
+            print("(")
+            rolling.forEach {
+                print(it)
+                print(",")
+            }
+            print(")")
+            val maxSum = rolling.sorted().drop(1).sum()
 
-        return maxSum;
+            return maxSum;
+        }
     }
 }
