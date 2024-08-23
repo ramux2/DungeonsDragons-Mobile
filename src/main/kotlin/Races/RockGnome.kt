@@ -4,6 +4,6 @@ import org.example.Util.Abilities
 
 class RockGnome : Race {
     override fun applyRacialBonuses(abilities: Abilities) {
-        abilities.constitution =+ 1
+        abilities.constitution += 1
     }
 }

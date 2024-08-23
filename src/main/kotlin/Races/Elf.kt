@@ -4,6 +4,6 @@ import org.example.Util.Abilities
 
 class Elf : Race {
     override fun applyRacialBonuses(abilities: Abilities) {
-        abilities.dexterity =+ 2
+        abilities.dexterity += 2
     }
 }

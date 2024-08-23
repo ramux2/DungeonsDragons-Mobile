@@ -8,7 +8,8 @@ data class Abilities(
     var wisdom: Int = 0,
     var charisma: Int = 0,
     var life: Int = 10
-) {
+)
+{
     // Construtor secundário que recebe uma lista de valores inteiros
     constructor(attributeValues: List<Int>) : this() {
         require(attributeValues.size == 6) { "A lista deve conter exatamente 6 valores." }
@@ -19,5 +20,6 @@ data class Abilities(
         this.intelligence += attributeValues[3]
         this.wisdom += attributeValues[4]
         this.charisma += attributeValues[5]
+        this.life += (attributeValues[2] - 10) / 2
     }
 }
